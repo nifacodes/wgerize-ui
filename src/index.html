@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Search Exerices" />
+  <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+  <title>Wgerize</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row custom-nav">
+      <div class="col-12 ">
+        <!-- Start of navbar -->
+        <nav class="navbar w-100 navbar-expand-md navbar-dark p-0 mt-0">
+          <a class="navbar-brand p-3" href="#">WGERIZE</a>
+          <!-- Start of button toggler for small screen -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#search-muscle"
+            aria-controls="search-muscle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> <!-- end of button toggler for small screens -->
+          <!-- Start of Search Dropdown Menu -->
+          <div class="collapse navbar-collapse w-100 custom-collapse-nav" id="search-muscle">
+            <div class="search-dropdown text-center dropdown">
+              <a class="nav-link dropdown-toggle " href="#" id="muscleMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Select Muscle Group
+              </a>
+              <div class="dropdown-menu w-100 scrollable" aria-labelledby="muscleMenuLink">
+                <a class="dropdown-item" id="1" href="#">Biceps Brachii</a>
+                <a class="dropdown-item" id="2" href="#">Anterior Deltoid</a>
+                <a class="dropdown-item" id="3" href="#">Serratus Anterior</a>
+                <a class="dropdown-item" id="4" href="#">Pectoralis Major</a>
+                <a class="dropdown-item" id="5" href="#">Triceps Brachii</a>
+                <a class="dropdown-item" id="6" href="#">Rectus Abdominis</a>
+                <a class="dropdown-item" id="7" href="#">Gastrocnemius</a>
+                <a class="dropdown-item" id="8" href="#">Gluteus Maximus</a>
+                <a class="dropdown-item" id="9" href="#">Trapezius</a>
+                <a class="dropdown-item" id="10" href="#">Quadriceps Femoris</a>
+                <a class="dropdown-item" id="11" href="#">Biceps Femoris</a>
+                <a class="dropdown-item" id="12" href="#">Latissimus Dorsi</a>
+                <a class="dropdown-item" id="13" href="#">Brachialis</a>
+                <a class="dropdown-item" id="14" href="#">Obliquus Externus Abdominis</a><a class="dropdown-item"
+                  id="15" href="#">Soleus</a>
+              </div>
+              <!-- End of Search Dropdown Menu-->
+            </div>
+            <!-- Start of Likes BTN -->
+            <div class="dropdown likes-menu">
+              <button type="button" class="btn" data-toggle="dropdown" data-container="body" data-placement="bottom"
+                data-content="List of Saved Likes!">
+                <img src="./img/icon-2.png" />
+              </button>
+              <div class="dropdown-menu scrollable likes-panel">
+                <!--<a class="dropdown-item" href="#">Link 1</a>-->
+              </div>
+            </div>
+            <!-- End of Likes BTN -->
+          </div>
+        </nav> <!-- End of Navbar-->
+      </div>
+    </div>
+    <div class="row">
+
+      <!-- MAIN PANELS (SEARCH PLUS ITS DETAILS) -->
+
+      <!-- SEARCH RESULTS FOR LIKED EXERCISES  -->
+      <div class="col-sm-6 d-sm-none">
+        <div class="accordion w-100 mt-4 results__accordion" id="resultsAccordion"></div>
+        <!-- Search Results Accordian Style for Small Screens -->
+        <div class="results__pages--small mt-4 "></div>
+        <!-- Search Pagination for Small Screen -->
+      </div>
+      <!-- Col for small screen sidebar-sticky -->
+
+      <!-- SEARCH RESULTS -->
+      <div class="col-md-4 col-lg-3 divider results sidebar-sticky d-none d-sm-block">
+        <ul class="nav mt-4 search-result-list"></ul>
+        <!-- list of results -->
+        <div class="results__pages mt-4 "></div>
+        <!-- pagination -->
+      </div>
+      <!-- Search Results -->
+
+      <!-- EXERCISE DETAILS -->
+      <div class="col-md-8 col-lg-9 d-none d-sm-block " id="panel">
+        <div class="row">
+          <div class="col-12  title">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12  exercise__details">
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Exercise Details Coloumn -->
+
+      <!-- Entire Container Row -->
+    </div>
+
+
+  </div>
+
+  <!-- container -->
+</body>
+
+</html>
