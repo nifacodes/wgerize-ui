@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: resolve(__dirname, "dist/js"),
     filename: "bundle.js",
+    publicPath: ""
   },
 
   devServer: {
@@ -66,7 +67,7 @@ module.exports = {
       filename: "index.html",
       title: "Wgerize",
       description: "Wgerize",
-      template: join(__dirname, 'dist/js', 'index.html'),
+      template: join(__dirname, 'src', 'index.html'),
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
