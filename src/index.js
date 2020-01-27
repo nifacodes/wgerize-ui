@@ -13,8 +13,6 @@ import * as likesView from "./views/likesPanel/mainViews/likesViewML";
 import * as likesViewMobile from "./views/likesPanel/mainViews/likeViewSm";
 import { toggleLikeMenu, toggleLikeBtn, deleteLikeFromView } from "./views/likesPanel/components/likesComponents";
 
-
-
 if (process.env.NODE_ENV === "production") {
   // console.log("Production mode");
 } else if (process.env.NODE_ENV === "development") {
