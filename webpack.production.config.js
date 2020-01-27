@@ -67,7 +67,7 @@ module.exports = {
       filename: "index.html",
       title: "Wgerize",
       description: "Wgerize",
-      template: join(__dirname, 'src', 'index.html'),
+      template: "./src/index.html"
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
