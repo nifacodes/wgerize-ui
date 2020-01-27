@@ -1,14 +1,13 @@
-const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const { join, resolve } = require('path');
 
 module.exports = {
-  entry: ["@babel/polyfill", "./src/index.js"],
+  entry: ["@babel/polyfill", join(__dirname, 'src', 'index.js')],
   output: {
-    path: path.resolve(__dirname, "dist/js"),
+    path: resolve(__dirname, "dist/js"),
     filename: "bundle.js",
-    publicPath: ""
   },
 
   devServer: {
@@ -67,7 +66,7 @@ module.exports = {
       filename: "index.html",
       title: "Wgerize",
       description: "Wgerize",
-      template: "./src/index.html"
+      template: join(__dirname, 'dist/js', 'index.html'),
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
@@ -77,3 +76,74 @@ module.exports = {
     })
   ]
 };
+
+
+
+module.exports = {
+  mode: 'development', // dev
+  devtool: 'cheap-module-eval-source-map', // dev
+  entry: join(__dirname, 'src', 'index.js'),
+  output: {
+    filename: 'bundle.js',
+    path: resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
+  devServer: {
+    contentBase: resolve(__dirname, 'build')
+  },
+  plugins: [
+    new webpack.ProgressPlugin(),
+    new HtmlWebpackPlugin({
+      template: join(__dirname, 'public', 'index.html')
+    }),
+
+    new webpack.HotModuleReplacementPlugin(), // dev
+    new webpack.NoEmitOnErrorsPlugin() // dev
+  ]
+}
+
+
+module.exports = {
+  entry: join(__dirname, 'src', 'index.js'),
+  mode: 'development', // dev
+  devtool: 'cheap-module-eval-source-map', // dev
+  output: {
+    filename: 'bundle.js',
+    path: resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
+  devServer: {
+    contentBase: resolve(__dirname, 'build')
+  },
+  plugins: [
+    new webpack.ProgressPlugin(),
+    new HtmlWebpackPlugin({
+      template: join(__dirname, 'public', 'index.html')
+    }),
+
+    new webpack.HotModuleReplacementPlugin(), // dev
+    new webpack.NoEmitOnErrorsPlugin() // dev
+  ]
+}
