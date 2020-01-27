@@ -166,8 +166,11 @@ const exerciseControllerSm = async (id, displayFromLiked) => {
 
     } else {
       try {
+        renderLoader(domelements.resultsPagesSmall);
         await state.exerciseObj.getExercise();
         await state.exerciseObj.getImage();
+        removeLoader(domelements.resultsPagesSmall);
+
         exerciseViewMobile.displayExerciseFromLiked(
           state.exerciseObj.exercise.data,
           state.exerciseObj.image.data.results,
@@ -283,6 +286,7 @@ domelements.searchResultListAcc.addEventListener("click", event => {
 domelements.likesPanel.addEventListener("click", event => {
   const displayFromLiked = true;
   if (event.target.matches(".btn-acc")) {
+
     exerciseControllerSm(event.target.parentNode.parentNode.id, displayFromLiked);
   }
 });

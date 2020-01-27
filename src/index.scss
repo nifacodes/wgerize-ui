@@ -2,14 +2,22 @@
   border: solid green 2px;
 }
 
+.loader {
+  margin: 5rem auto;
+  text-align: center; }
+  .loader svg {
+    height: 5.5rem;
+    width: 5.5rem;
+    fill: #11998e;
+    transform-origin: 44% 50%;
+    animation: spinLoader 1.5s infinite linear; }
+
 @keyframes spinLoader {
-  44% {
-    transform: rotate(360deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-}
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 body {
   color: #303030;
   background: linear-gradient(to right, #136a8a, #267871); 
@@ -120,20 +128,7 @@ body {
   border-right: 1px solid #505050;
   min-height: calc(100vh - 50px);
 }
-.loader {
-  margin: 5rem auto;
-  text-align: center;
-}
-.loader svg {
-  height: 5.5rem;
-  width: 5.5rem;
-  fill: #11998e;
-  animation-name: spinLoader;
-  //transform-origin: 44% 50%;
-  animation-duration: 1.7s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
+
 .page-link {
   background-color: #303030;
   border: 1px solid #11998e;
